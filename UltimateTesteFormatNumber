@@ -1,0 +1,38 @@
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
+public class UltimateTesteFormatNumber {
+
+	public static void main(String[] args) {
+		String pattern = "#,##0.###";
+		double count = 0;
+		String finalNumber = "";
+		while( count < 1000000000000d) {
+			System.out.println(finalNumber);
+			if (count < 10){
+				count = count + 0.1;
+			} else {
+				count = count + 1000;	
+			}
+			finalNumber = new TesteFormatNumber().formatNumber(',', '.', 3, String.valueOf(count) , pattern);
+			System.out.println(finalNumber);
+		}		
+		
+	}
+	
+	private String formatNumber(char decimalSeparator, char groupingSeparator, int groupingSize, String theNumber, String pattern) {
+		
+		Locale currentLocale = Locale.getDefault();
+		DecimalFormatSymbols unusualSymbols = new DecimalFormatSymbols(currentLocale);
+		unusualSymbols.setDecimalSeparator(decimalSeparator);
+		unusualSymbols.setGroupingSeparator(groupingSeparator);
+
+		DecimalFormat decimalFormat = new DecimalFormat(pattern, unusualSymbols);
+		decimalFormat.setGroupingSize(groupingSize);
+		return decimalFormat.format(new BigDecimal(theNumber));
+		
+	}
+	
+}
