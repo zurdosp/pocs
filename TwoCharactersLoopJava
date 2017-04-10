@@ -1,0 +1,27 @@
+package br.com.teste;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+
+public class TwoCharactersLoopJava {
+
+	public static void main(String[] args) {
+		   Scanner sc = new java.util.Scanner (System.in);
+		   int countOfNumbers = sc.nextInt();
+		   List<Integer> lists1 = new ArrayList<Integer>();
+		   long time = new Date().getTime();
+		   for (int ii = 0; ii<countOfNumbers; ii++) {
+			 lists1.add(sc.nextInt());
+		   }
+		 //System.out.println("size of list:" + lists1.size());
+		Integer max1 =    lists1.stream().mapToInt(i -> i).max().getAsInt();
+		long finalCount = lists1.stream().filter(p -> p.intValue() == max1.intValue()).count();
+		System.out.println("records:" + finalCount);
+		System.out.println("JAVA LAMBDA program time:" + (new Date().getTime() - time));
+		sc.close();
+		
+	}
+
+}
