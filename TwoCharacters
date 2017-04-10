@@ -1,0 +1,23 @@
+package br.com.teste
+
+import java.util.Scanner
+import scala.collection.mutable._
+
+object TwoCharacters {
+
+  def main(args: Array[String]): Unit = {
+    
+   val sc = new java.util.Scanner (System.in)
+   val countOfNumbers = sc.nextInt()
+   val list1 = new ListBuffer[Int]()
+   var time1 = java.lang.System.currentTimeMillis()
+   for (ii <- 0 until countOfNumbers) {
+	 list1 += sc.nextInt
+   }
+   println("size of list:" + list1.size)
+   var max1 = list1.max
+   println("records: " + list1.count(height => height == max1))
+  println(("scala functionality program time:" + (java.lang.System.currentTimeMillis() - time1)))
+  }
+
+}
