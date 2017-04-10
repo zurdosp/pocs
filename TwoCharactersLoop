@@ -1,0 +1,33 @@
+package br.com.teste
+
+import util.control.Breaks._
+import scala.collection.mutable.ListBuffer
+
+object TwoCharactersLoop {
+  def main(args: Array[String]): Unit = {
+    
+   val sc = new java.util.Scanner (System.in);
+   val countOfNumbers = sc.nextInt();
+   val lists1 = new ListBuffer[Int]()
+   val time = System.currentTimeMillis()
+   for (ii <- 0 until countOfNumbers) {
+	 lists1 += sc.nextInt
+   }
+   var lastValue = -1
+   var count = 0
+   val lists2 = lists1.sorted.sortWith(_ > _)
+   breakable {
+	   for (a <- 0 to countOfNumbers){
+	     if (lastValue == -1 || lastValue == lists2(a)){
+	    	 count += 1
+	     } else {
+	       break
+	     }
+	     lastValue = lists2(a)
+	   }
+   }
+   println("records:" + count)
+   println("scala classic loop time:" + (System.currentTimeMillis() - time))
+  }
+
+}
