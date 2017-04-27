@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<div ng-app="myApp">
+	<div  ng-controller="myCtrl">
+		First Name 611: <input type="text" ng-model="firstName"><br>
+		Last Name: <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name: {{firstName + " " + lastName}}
+	<button ng-click="register()">Broadcast 2</button>
+	</div>
+	<div ng-controller="SiblingOneCtrl">
+	
+	
+	</div>
+ </div>
+</body>
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('myCtrl', function($rootScope, $scope) {
+	alert(0);
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    $scope.register = function(){
+    	alert(1111);
+    	$rootScope.$broadcast('parent', 'Some data'); // going down!
+    }
+});
+
+app.controller('SiblingOneCtrl', function ($scope) {
+  alert(1);
+  $scope.$on('parent', sss);
+
+  function sss (event, data) {
+	    console.log(data); // 'Some data'
+	    alert(3);
+	  }
+  
+});
+
+</script>
+
+</html>
