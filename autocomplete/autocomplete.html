@@ -13,12 +13,13 @@
   </head>
 
   <body ng-controller="MainCtrl">
-    <tags-input ng-model="tags" display-property="name" placeholder="Add a country" replace-spaces-with-dashes="false">
-      <auto-complete source="loadTags($query)"
+  <form name="form1">
+    <tags-input ng-model="tags" add-from-autocomplete-only="true" display-property="nome" name="nome" id="nome" style="width:150px"
+    	onInvalidTag="aaa($tag)" on-tag-adding="checkAddElement($tag, this)" max-length="100" key-property="sigla" 
+    	replace-spaces-with-dashes="false" ng-change="onChange();" placeholder=".">
+      <auto-complete source="loadTags($query, this)"
                      min-length="0"
-                     load-on-focus="true"
-                     load-on-empty="true"
-                     max-results-to-show="32"
+                     selectFirstMatch="true"
                      template="my-custom-template"></auto-complete>
     </tags-input>
     
@@ -27,6 +28,9 @@
         <span ng-bind-html="$highlight($getDisplayText())"></span>
       </div>
     </script>
+    <input type="button" ng-click="addElement();" value="add">
+    <input type="button" ng-click="save();" value="submit">
+    </form>
   </body>
 
 </html>
