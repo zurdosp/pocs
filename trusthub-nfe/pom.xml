@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.pocnf</groupId>
+	<artifactId>trusthub-nfe</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>trusthub-nfe</name>
+	<description>trusthub-nfe</description>
+
+	<properties>
+		<SPRING-VERSION>4.1.1.RELEASE</SPRING-VERSION>
+	</properties>
+	<dependencies>
+		<dependency>
+			<artifactId>srm-sigma-nfe</artifactId>
+			<groupId>br.com.srmasset.sigma.nfe</groupId>
+			<version>1.6.15</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-messaging</artifactId>
+			<version>${SPRING-VERSION}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+</project>
