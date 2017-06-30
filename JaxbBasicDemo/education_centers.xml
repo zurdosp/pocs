@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<University>
+    <name>Cambridge</name>
+    <address>England</address>
+    <Students>
+        <Student id="1">
+            <firstName>Alan</firstName>
+            <lastName>Turing</lastName>
+            <birthDate>1956-10-01</birthDate>
+            <section>Computer Science</section>
+        </Student>
+        <Student id="2">
+            <firstName>Thomas</firstName>
+            <lastName>Edison</lastName>
+            <birthDate>1916-03-03</birthDate>
+            <section>Physics</section>
+        </Student>
+        <Student id="3">
+            <firstName>Linus</firstName>
+            <lastName>Torvald</lastName>
+            <birthDate>1958-11-04</birthDate>
+            <section>Computer Science</section>
+        </Student>
+    </Students>
+</University>
