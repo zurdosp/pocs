@@ -12,11 +12,11 @@ import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
-public class PocNfe {
+public class PocNfe_StaxNaMao {
 
 
 	public static void main(String[] args) {
-		String fileName = "/Users/pankaj/employee.xml";
+		String fileName = "/home/christian/christian/work/git/pocs/trusthub-nfe/docs/br/31130908237189000142550010000414841002263608-nfe.xml";
 		List<Nfe> empList = parseXML(fileName);
 		for(Nfe emp : empList){
 			System.out.println(emp.toString());
@@ -30,31 +30,27 @@ public class PocNfe {
 		try {
 			XMLEventReader xmlEventReader = xmlInputFactory.createXMLEventReader(new FileInputStream(fileName));
 			while(xmlEventReader.hasNext()){
+				Nfe nfe = new Nfe();
 				XMLEvent xmlEvent = xmlEventReader.nextEvent();
+				//System.out.println(xmlEvent);
+				if (xmlEvent.toString().contains("xml version")){
+					continue;
+				}
 				if (xmlEvent.isStartElement()){
 					StartElement startElement = xmlEvent.asStartElement();
-					if(startElement.getName().getLocalPart().equals("Nfe")){
-						emp = new Nfe();
-						//Get the 'id' attribute from Nfe element
-						Attribute idAttr = startElement.getAttributeByName(new QName("id"));
-						if(idAttr != null){
-							emp.setId(Integer.parseInt(idAttr.getValue()));
+					startElement.getNamespaces();
+					 if (startElement.getName().getLocalPart().equals("ide")){
+						xmlEvent = xmlEventReader.nextEvent();		
+						if (xmlEvent.asStartElement().getName().getLocalPart().equals("cUF")){						
+							xmlEvent = xmlEventReader.nextEvent();
+							System.out.println("cUF:" + xmlEvent.asCharacters());
 						}
 					}
-					//set the other varibles from xml elements
-					else if(startElement.getName().getLocalPart().equals("age")){
-						xmlEvent = xmlEventReader.nextEvent();
-						emp.setAge(Integer.parseInt(xmlEvent.asCharacters().getData()));
-					}else if(startElement.getName().getLocalPart().equals("name")){
-						xmlEvent = xmlEventReader.nextEvent();
-						emp.setName(xmlEvent.asCharacters().getData());
-					}else if(startElement.getName().getLocalPart().equals("gender")){
-						xmlEvent = xmlEventReader.nextEvent();
-						emp.setGender(xmlEvent.asCharacters().getData());
-					}else if(startElement.getName().getLocalPart().equals("role")){
-						xmlEvent = xmlEventReader.nextEvent();
-						emp.setRole(xmlEvent.asCharacters().getData());
-					}
+					 if (xmlEvent.isStartElement() && 
+							 xmlEvent.asStartElement().getName().getLocalPart().equals("cobr")){						
+						 xmlEvent = xmlEventReader.nextEvent();
+						 System.out.println("duplicata:" + xmlEvent.asStartElement().getName());
+					 }						
 				}
 				//if Nfe end element is reached, add Nfe object to list
 				if(xmlEvent.isEndElement()){
@@ -70,31 +66,5 @@ public class PocNfe {
 		}
 		return empList;
 	}
-
-
-	//	public static void main(String[] args){
-	//		System.out.println("inicio");
-	//		new PocNfe().processarNota("\\christian\\M18\\notas\\BR\\Notas_Brasil_NFE\\35130944031201000121550010000734061080004062-procNfe.xml");
-	//		System.out.println("fim");
-	//	}
-	//
-	//	void processarNota(String pathFile) {
-	//		FileInputStream crunchifyInputStream = null;
-	//		File crunchifyFile = new File(pathFile);
-	//		byte[] crunchifyByteStream = new byte[(int) crunchifyFile.length()];
-	//		try {
-	//			crunchifyInputStream = new FileInputStream(crunchifyFile);
-	//			crunchifyInputStream.read(crunchifyByteStream);
-	//			crunchifyInputStream.close();
-	//
-	//			for (int counter = 0; counter < crunchifyByteStream.length; counter++) {
-	//				System.out.print((char) crunchifyByteStream[counter]);
-	//			}
-	//			TNfeProc tNfeProc = new NfeFactory().recuperaDeXml(crunchifyByteStream);
-	//			System.out.println("\n\nTask Finished");
-	//		} catch (Exception e) {
-	//			e.printStackTrace();
-	//		}
-	//	}
 
 }
