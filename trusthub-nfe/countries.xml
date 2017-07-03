@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Countries>
-	<Country importance="1">
+	<Country importance="1" id="111">
 		<Country_Name>Spain</Country_Name>
 		<Country_Capital>Madrid</Country_Capital>
 		<Country_Foundation_Date></Country_Foundation_Date>
 		<Country_Continent>Europe</Country_Continent>
 		<Country_Population>0</Country_Population>
+		<birthDate>1956-10-01</birthDate>
+		<birthDateTime>1956-10-01 12:23:33:444</birthDateTime>
 	</Country>
-	<Country importance="0">
+	<Country importance="0" id="2">
 		<Country_Name>USA</Country_Name>
 		<Country_Capital>Washington</Country_Capital>
 		<Country_Foundation_Date></Country_Foundation_Date>
 		<Country_Continent>America</Country_Continent>
 		<Country_Population>0</Country_Population>
+		<birthDate>1956-10-01</birthDate>
+		<birthDateTime>1996-11-11 12:23:33:444</birthDateTime>
 	</Country>
 </Countries>

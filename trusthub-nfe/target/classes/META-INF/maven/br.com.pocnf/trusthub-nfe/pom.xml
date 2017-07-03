@@ -9,12 +9,13 @@
 
 	<properties>
 		<SPRING-VERSION>4.1.1.RELEASE</SPRING-VERSION>
+		<GSON.VERSION>2.8.1</GSON.VERSION>
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-			<version>2.2.11</version>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>${GSON.VERSION}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
