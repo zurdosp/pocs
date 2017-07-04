@@ -25,11 +25,11 @@ import br.com.trusthub.parser.filter.NamespaceFilterXMLReader;
 import br.com.trusthub.parser.model.Countries;
 //import br.com.trusthub.parser.filter.NamespaceFilterXMLReader;
 
-public class PocXmlToJsonConverter {
+public class PocXmlToJsonConverter2 {
 
 	public static void main(String[] args) {
 		int countGeral = 0;
-		PocXmlToJsonConverter pocXmlToJsonConverter = new PocXmlToJsonConverter();
+		PocXmlToJsonConverter2 pocXmlToJsonConverter = new PocXmlToJsonConverter2();
 		while (countGeral++ < 1){
 			int a = 0;
 			LocalDateTime now_from = LocalDateTime.now();
