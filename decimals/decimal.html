@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+  <form name="form1">
+	1<input type="text" name="field" ng-model="number" ui-number-mask="3">
+	<br />
+
+    <input type="button" ng-click="addElement();" value="add">
+    <input type="button" ng-click="save();" value="submit">
+    </form>
+  </body>
+
+</html>
+ 		    
+</body>
+</html>
