@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Invoice
+	xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+	xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+	xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+	xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+	xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2"
+	xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1"
+	xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<!--2 Firma Digital//-->
+		<!-- Inicio Firma Digital//-->
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<ds:Signature Id="20106910872">
+					<SignedInfo
+						xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+						<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+						<Reference URI="">
+							<Transforms>
+								<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+							</Transforms>
+							<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+							<DigestValue>dTgy1Nthd7vfcZf1YMeDXgmhEQM=</DigestValue>
+						</Reference>
+					</SignedInfo>
+					<SignatureValue
+						xmlns="http://www.w3.org/2000/09/xmldsig#">Z1DeJITUUOj7HxE9f8iz7gnXfB/cMtgzUNBVY4cNNR7eh9eUE/8vK7yVm9/yQcICNwkrVKaXJ4fRtz/u845TdZNdnKDS91mhX+9/Hbmj9LlbPEQvjIyPOZeYw8ONgI7R/8iynhyKmU8+RE+1UoSc2GEYZ9wVF5yI7TFDEjv8lCYHu0NkE0JlenQMrGitDpD7jlpqWHc+TkMqeYxWWYRig8rJ4+2XCATusnfKMq0bqlXRQTtH9bfCc9B8kNJ76mtpnuNbcRjkoGJrKYMBwAvGxhlhgWnEKuIFPaTazXp5JLrfSaUmhcrhoshZiOaLG8Aw96MyN06cPmB8yYGmuyohJA==
+					</SignatureValue>
+					<KeyInfo
+						xmlns="http://www.w3.org/2000/09/xmldsig#">
+						<X509Data>
+							<X509Certificate>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</X509Certificate>
+						</X509Data>
+					</KeyInfo>
+				</ds:Signature>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+		<!-- Fin Firma Digital//-->
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<sac:AdditionalInformation>
+					<!--18 Total valor de venta - operaciones gravadas - Catálogo No. 14//-->
+					<sac:AdditionalMonetaryTotal>
+						<cbc:ID>1001</cbc:ID>
+						<cbc:PayableAmount currencyID="PEN">3.00</cbc:PayableAmount>
+					</sac:AdditionalMonetaryTotal>
+					<!--19 Total valor de venta - operaciones inafectas - Catálogo No. 14//-->
+					<sac:AdditionalMonetaryTotal>
+						<cbc:ID>1002</cbc:ID>
+						<cbc:PayableAmount currencyID="PEN">0.00</cbc:PayableAmount>
+					</sac:AdditionalMonetaryTotal>
+					<!--20 Total valor de venta - operaciones exoneradas - Catálogo No. 14//-->
+					<sac:AdditionalMonetaryTotal>
+						<cbc:ID>1003</cbc:ID>
+						<cbc:PayableAmount currencyID="PEN">0.00</cbc:PayableAmount>
+					</sac:AdditionalMonetaryTotal>
+					<!--MONTO EN LETRAS//-->
+					<sac:AdditionalProperty>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Value>
+							<![CDATA[TRES CON  54/100 SOLES]]>
+						</cbc:Value>
+					</sac:AdditionalProperty>
+					<!--31 Leyendas - Catálogo No. 15//-->
+				</sac:AdditionalInformation>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<DatosAdicionales>
+					<DatoAdicional>
+						<Codigo>1000</Codigo>
+						<Valor>
+							<![CDATA[TRES CON  54/100 SOLES]]>
+						</Valor>
+					</DatoAdicional>
+				</DatosAdicionales>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<!--36 Versión del UBL//-->
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+	<!--37 Versión de la estructura del documento//-->
+	<cbc:CustomizationID>1.0</cbc:CustomizationID>
+	<!--8 Numeración, conformada por serie y número correlativo//-->
+	<cbc:ID>CV22-1339</cbc:ID>
+	<!--1 Fecha de emisión//-->
+	<cbc:IssueDate>2016-02-24</cbc:IssueDate>
+	<cbc:InvoiceTypeCode>01</cbc:InvoiceTypeCode>
+	<!--7 Tipo de documento (Factura) - Catálogo No. 01//-->
+
+	<!--28 Tipo de moneda en la cual se emite la factura electrónica  - Catálogo No. 02//-->
+	<cbc:Note><![CDATA[ TESTE CAMILA ]]></cbc:Note>
+	<cbc:DocumentCurrencyCode>PEN</cbc:DocumentCurrencyCode>
+	  <cbc:ExpiryDate>2017-01-12</cbc:ExpiryDate>
+	<!--29 Tipo y número de la guía de remisión relacionada con la operación que se factura - Catálogo No. 01//-->
+	<!--OC//-->
+	<!--30 Tipo y número de otro documento y código relacionado con la operación que se factura - Catálogo No. 12//-->
+	<!-- Inicio de Referencia de la Firma Digital//-->
+	<cac:Signature>
+		<cbc:ID>IDSign20106910872</cbc:ID>
+		<cac:SignatoryParty>
+			<cac:PartyIdentification>
+				<cbc:ID>20106910872</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>
+					<![CDATA[Deloitte & Touche S.R.L.]]>
+				</cbc:Name>
+			</cac:PartyName>
+		</cac:SignatoryParty>
+		<cac:DigitalSignatureAttachment>
+			<cac:ExternalReference>
+				<cbc:URI>#signature20106910872</cbc:URI>
+			</cac:ExternalReference>
+		</cac:DigitalSignatureAttachment>
+	</cac:Signature>
+	<!-- Fin de Referencia de la Firma Digital//-->
+	<!--3 Apellidos y nombres, denominación o razón social//-->
+	<!--4 Nombre Comercial//-->
+	<!--5 Domicilio fiscal - Ubigeo es Catálogo No. 13 - País es Catálogo No. 04//-->
+	<!--6 Número de RUC - Catálogo No. 06//-->
+	<cac:AccountingSupplierParty>
+		<cbc:CustomerAssignedAccountID>20448121349</cbc:CustomerAssignedAccountID>
+		<cbc:AdditionalAccountID>6</cbc:AdditionalAccountID>
+		<cac:Party>
+			<cac:PartyName>
+				<cbc:Name>
+					<![CDATA[Deloitte & Touche S.R.L.]]>
+				</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:ID>150131</cbc:ID>
+				<cbc:StreetName>Calle Begonias N° 441, Dpto. 6, San Isidro</cbc:StreetName>
+				<cac:Country>
+					<cbc:IdentificationCode>PE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>
+					<![CDATA[Deloitte & Touche S.R.L.]]>
+				</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<!--9 Tipo y número de documento de identidad del adquirente o usuario  - Catálogo No. 06//-->
+	<!--10 Apellidos y nombres, denominación o razón social del adquirente o usuario//-->
+	<cac:AccountingCustomerParty>
+		<cbc:CustomerAssignedAccountID>20551318487</cbc:CustomerAssignedAccountID>
+		<cbc:AdditionalAccountID>6</cbc:AdditionalAccountID>
+		<cac:Party>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>
+					<![CDATA[teste]]>
+				</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<!--22 Sumatoria IGV - Catálogo No. 05//-->
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="PEN">0.54</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxAmount currencyID="PEN">0.54</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cac:TaxScheme>
+					<cbc:ID>1000</cbc:ID>
+					<cbc:Name>IGV</cbc:Name>
+					<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<!--27 Importe total de la venta, cesión en uso o del servicio prestado//-->
+		<cbc:PayableAmount currencyID="PEN">1583.54</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<!--33 Número de orden del Ítem//-->
+		<cbc:ID>1</cbc:ID>
+		<!--11 Unidad de medida por ítem - Catálogo No. 03//-->
+		<!--12 Cantidad de unidades por ítem//-->
+		<cbc:InvoicedQuantity unitCode="ZZ">1</cbc:InvoicedQuantity>
+		<!--21 Valor de venta por ítem//-->
+		<cbc:LineExtensionAmount currencyID="PEN">1.00</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<!--35 Valor referencial unitario por ítem en operaciones no onerosas//-->
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="PEN">1.18</cbc:PriceAmount>
+				<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<!-- decuento por item//-->
+		<!--	16 Afectación al IGV por ítem - Catálogo No. 07//-->
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="PEN">0.18</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxAmount currencyID="PEN">0.18</cbc:TaxAmount>
+				<cbc:Percent>18</cbc:Percent>
+				<cac:TaxCategory>
+					<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<!--13 Descripción detallada del servicio prestado, bien vendido o cedido en uso, indicando las características//-->
+		<cac:Item>
+			<cbc:Description>
+				<![CDATA[Servicios de consultoría en Gestión empresarial]]>
+			</cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID>
+					<![CDATA[DEGL1]]>
+				</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<!--14 Valor unitario por ítem//-->
+		<cac:Price>
+			<cbc:PriceAmount currencyID="PEN">1.00</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<!--33 Número de orden del Ítem//-->
+		<cbc:ID>2</cbc:ID>
+		<!--11 Unidad de medida por ítem - Catálogo No. 03//-->
+		<!--12 Cantidad de unidades por ítem//-->
+		<cbc:InvoicedQuantity unitCode="ZZ">2</cbc:InvoicedQuantity>
+		<!--21 Valor de venta por ítem//-->
+		<cbc:LineExtensionAmount currencyID="PEN">2.00</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<!--35 Valor referencial unitario por ítem en operaciones no onerosas//-->
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="PEN">1.18</cbc:PriceAmount>
+				<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<!-- decuento por item//-->
+		<!--	16 Afectación al IGV por ítem - Catálogo No. 07//-->
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="PEN">0.36</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxAmount currencyID="PEN">0.36</cbc:TaxAmount>
+				<cbc:Percent>18</cbc:Percent>
+				<cac:TaxCategory>
+					<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<!--13 Descripción detallada del servicio prestado, bien vendido o cedido en uso, indicando las características//-->
+		<cac:Item>
+			<cbc:Description>
+				<![CDATA[Project Blue Fact Sheet for Peru: C-0259304-02-01]]>
+			</cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID>
+					<![CDATA[SO1]]>
+				</cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<!--14 Valor unitario por ítem//-->
+		<cac:Price>
+			<cbc:PriceAmount currencyID="PEN">1.00</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>

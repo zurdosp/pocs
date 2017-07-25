@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Countries xmlns="http://www.globo.com">
+<Countries>
 	<Country importance="1" id="111">
 		<Country_Name>Spain</Country_Name>
 		<Country_Capital>Madrid</Country_Capital>
