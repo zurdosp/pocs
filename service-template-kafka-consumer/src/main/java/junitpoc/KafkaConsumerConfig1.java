@@ -15,7 +15,7 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
 @EnableKafka
 @Configuration
-public class KafkaConsumerConfig {
+public class KafkaConsumerConfig1 {
 
 	@KafkaListener(topics = "topic1")
 	public void listen(String message) {

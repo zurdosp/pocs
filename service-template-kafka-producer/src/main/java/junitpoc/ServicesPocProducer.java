@@ -30,10 +30,10 @@ public class ServicesPocProducer {
 	
 	@RequestMapping(value = "/students/{studentId}", method = GET)
 	public String retrieveCoursesForStudent(@PathVariable String studentId) {
-		System.out.println(serviceConfig.getDatabase1());
-		System.out.println(serviceConfig.getServicePort());
 		servicesRepository.findAll();
-		kafkaProducerConfig.sendMessage(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()));
+		String dataString = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date());
+		kafkaProducerConfig.sendMessage(dataString);
+		System.out.println("Message produced: " + dataString);
 		if (service1.getNomeFull().equalsIgnoreCase("christian tejada")) {
 			return serviceConfig.getDatabase1();
 		} else {
