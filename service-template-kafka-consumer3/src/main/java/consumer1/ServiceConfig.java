@@ -1,4 +1,4 @@
-package junitpoc;
+package consumer1;
 
 import javax.sql.DataSource;
 

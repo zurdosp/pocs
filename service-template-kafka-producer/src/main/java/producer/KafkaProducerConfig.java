@@ -1,4 +1,4 @@
-package junitpoc;
+package producer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,27 +18,22 @@ import org.springframework.kafka.core.ProducerFactory;
 public class KafkaProducerConfig {
 
 	@Autowired
+	private ServiceConfig serviceConfig;
+
+	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
 
 	public void sendMessage(String msg) {
-		kafkaTemplate.send("topic1", msg);
+		kafkaTemplate.send(serviceConfig.getKafkaTopicName(), msg);
 	}
 
 	@Bean
 	public ProducerFactory<String, String> producerFactory() {
 		Map<String, Object> configProps = new HashMap<>();
-		configProps.put(
-				ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, 
-				"0.0.0.0:9092");
-		configProps.put(
-				ConsumerConfig.GROUP_ID_CONFIG, 
-				UUID.randomUUID().toString());        
-		configProps.put(
-				ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, 
-				StringSerializer.class);
-		configProps.put(
-				ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, 
-				StringSerializer.class);
+		configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, serviceConfig.getKafkaServerConfig());
+		configProps.put(ConsumerConfig.GROUP_ID_CONFIG, UUID.randomUUID().toString());
+		configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+		configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
 		return new DefaultKafkaProducerFactory<>(configProps);
 	}
 
