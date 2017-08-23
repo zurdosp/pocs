@@ -1,13 +1,12 @@
-package junitpoc;
+package br.com.testemongo.mongo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ServicesPocConsumer1App {
+public class MongoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ServicesPocConsumer1App.class, args);
+		SpringApplication.run(MongoApplication.class, args);
 	}
-
 }
