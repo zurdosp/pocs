@@ -12,25 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SaaasGatewayService {
 
-	@RequestMapping(value="/hello/{name}", method = RequestMethod.GET)
-	@ResponseBody
-	public String cancelaTransacao(@PathVariable(value="name") String params) {
-		String json = "{\"nome\" : \"" + params + "\"}";
-		System.out.println("json:" + json);
-		return json;
-	}
-	
-	@RequestMapping(value="/hello/{name}", method = RequestMethod.GET)
-	@ResponseBody
-	public String processaTransacao(@PathVariable(value="name") String params) {
-		String json = "{\"nome\" : \"" + params + "\"}";
-		System.out.println("json:" + json);
-		return json;
-	}
-	
-	
-	
-	
 	
 	// TESTES INICIO
 	
