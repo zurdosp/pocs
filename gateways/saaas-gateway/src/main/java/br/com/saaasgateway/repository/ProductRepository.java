@@ -12,6 +12,6 @@ import br.com.saaasgateway.domain.Product;
 @RepositoryRestResource(collectionResourceRel = "products", path = "aaaa")
 public interface ProductRepository extends MongoRepository<Product, String> {
 
-		List<Product> findByLastName(@Param("name") String name);
+		//List<Product> findByLastName(@Param("name") String name);
 	
 }

@@ -1,3 +1,4 @@
+package br.com.gateway;
 import org.junit.Test;
 
 import DataContracts.CreditCardTransaction.CreditCard;
