@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="DEV_HOME" value="/home/christian/work/logs" />
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>${DEV_HOME}/log.log</file>
+		<encoder>
+			<pattern>%date - [%level] - from %logger in %thread - %message %xException%n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- name = pacote de logs-->
+	<logger name="junitpoc" level="debug" additivity="false">
+		<appender-ref ref="FILE" />
+	</logger>
+
+</configuration>
