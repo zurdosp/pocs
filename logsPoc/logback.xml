@@ -4,13 +4,22 @@
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
 		<file>${DEV_HOME}/log.log</file>
 		<encoder>
-			<pattern>%date - [%level] - from %logger in %thread - %message %xException%n</pattern>
+			<pattern>%date - [%level] - from %logger in %thread - %message%n</pattern>
 		</encoder>
 	</appender>
 
-	<!-- name = pacote de logs-->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%date - [%level] - from %logger in %thread - %message%n</pattern>
+		</layout>
+	</appender>
+
 	<logger name="junitpoc" level="debug" additivity="false">
 		<appender-ref ref="FILE" />
 	</logger>
+
+	<root level="debug">
+		<appender-ref ref="STDOUT" />
+	</root>
 
 </configuration>
