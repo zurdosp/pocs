@@ -4,15 +4,13 @@
 	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
 		<file>${DEV_HOME}/log.log</file>
 		<encoder>
-			<pattern>%date - [%level] - from %logger in %thread - %message
-				%xException</pattern>
+			<pattern>%date - [%level] - from %logger in %thread - %message%n</pattern>
 		</encoder>
 	</appender>
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
-			<pattern>%date - [%level] - from %logger in %thread - %message
-				%xException</pattern>
+			<pattern>%date - [%level] - from %logger in %thread - %message%n</pattern>
 		</layout>
 	</appender>
 

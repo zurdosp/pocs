@@ -1,0 +1,35 @@
+#!/bin/bash
+declare -A matrixservicos
+num_rows=2
+num_columns=2
+
+matrixservicos[0, 0]="servico1"
+matrixservicos[0, 1]=0
+
+matrixservicos[1, 0]="servico2"
+matrixservicos[1, 1]=0
+
+
+controle=""
+declare -a listaNomesServicos
+
+while true; do
+	retorno=$(curl -o /dev/null --silent --head --write-out '%{http_code}\n' http://localhost:9999/students/1111)
+        if [ "$retorno" != 200 ]; then
+		if [ "$controle" == "servico1" ]; then
+                	echo 'no ok'#manda email
+		fi
+		controle="servico1"
+        fi
+
+	
+	retorno1=$(curl -o /dev/null --silent --head --write-out '%{http_code}\n'  http://localhost:9999/students/1111)
+
+        if [ "$retorno" != 200 ]; then
+                echo 'no ok'
+        fi
+
+
+	sleep 3
+done
+
