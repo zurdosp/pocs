@@ -9,7 +9,7 @@
 
 	<properties>
 		<SPRING-VERSION>4.1.1.RELEASE</SPRING-VERSION>
-		<GSON.VERSION>2.8.1</GSON.VERSION>
+		<GSON.VERSION>2.8.9</GSON.VERSION>
 	</properties>
 	<dependencies>
 		<dependency>
